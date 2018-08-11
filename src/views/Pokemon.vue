@@ -6,8 +6,20 @@
         <p>Experience: {{pokemon.experience}}</p>
         <p>Height: {{pokemon.height}}</p>
         <p>Weight: {{pokemon.weight}}</p>
-        <p>Types: <span :key="type" v-for="type in pokemon.types">{{type}} </span></p>
-        <p>Abilities: <span :key="type" v-for="type in pokemon.abilities">{{type}} </span></p>
+        <ul class="list">
+            <li class="list-item">Types: </li>
+            <li class="list-item"
+                :key="type"
+                v-for="type in pokemon.types">{{type}}.
+            </li>
+        </ul>
+        <ul class="list">
+            <li class="list-item">Abilities: </li>
+            <li class="list-item"
+                :key="ability"
+                v-for="ability in pokemon.abilities">{{ability}}.
+            </li>
+        </ul>
 
   </article>
 </template>
@@ -60,6 +72,7 @@ export default {
         text-align: center;
     }
 
+    .list-item::first-letter,
     .pokemon-subtitle::first-letter {
         text-transform: uppercase;
     }
@@ -69,5 +82,18 @@ export default {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+    }
+
+    .list {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .list-item {
+        float: left;
+        list-style-type: none;
+        margin-right: 0.25rem;
     }
 </style>
