@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokedex</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
     <div id="app">
-        {{text}}
+        <h1 class="title">{{text}}</h1>
+        <ul class="pokemons">
+            <li v-for="pokemon in pokemons">
+                {{ pokemon.name }}
+            </li>
+        </ul>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
