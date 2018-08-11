@@ -20,7 +20,6 @@
                 v-for="ability in pokemon.abilities">{{ability}}.
             </li>
         </ul>
-
   </article>
 </template>
 
@@ -94,6 +93,5 @@ export default {
     .list-item {
         float: left;
         list-style-type: none;
-        margin-right: 0.25rem;
     }
 </style>
