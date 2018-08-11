@@ -11,6 +11,9 @@
 <body>
     <div id="app">
         <h1 class="title">{{text}}</h1>
+        <div class="buttons">
+            <button class="btn" v-for="type in pokemonTypes">{{type}}</button>
+        </div>
         <section class="pokemons" v-if="pokemons">
             <article class="pokemon" v-for="pokemon in pokemons">
                 <h2 class="pokemon-name">{{pokemon.name}}</h2>
