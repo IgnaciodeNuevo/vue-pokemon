@@ -1,10 +1,6 @@
 <template>
   <div>
       <h1 class="title">{{appTitle}}</h1>
-        <form action="">
-            <label class="form-label" for="search">Search a Pokemon</label>
-            <input class="form-input" id="search" type="text">
-        </form>
         <button class="btn"
                 type="button"
                 v-on:click="showAllPokemons()">
@@ -81,28 +77,6 @@ html {
     color: #9448b2;
     font-size: 3rem;
     text-align: center;
-}
-
-.form-label,
-.form-input {
-    display: block;
-}
-
-.form-label {
-    background-color: #ffffff;
-    color: #9448b2;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.form-input {
-    border: 2px solid #ffd057;
-    border-radius: 8px;
-    color: #333333;
-    font-family: inherit;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
 }
 
 .btn {
