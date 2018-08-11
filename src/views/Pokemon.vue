@@ -3,7 +3,12 @@
         <h1 class="pokemon-title">{{pokemon.id}}</h1>
         <h2 class="pokemon-subtitle">{{pokemon.name}}</h2>
         <img class="pokemon-img" :src="getImage(pokemon.image)" :alt="pokemon.name">
-        <p class="pokemon-types">Types: {{pokemon.types}}</p>
+        <p>Experience: {{pokemon.experience}}</p>
+        <p>Height: {{pokemon.height}}</p>
+        <p>Weight: {{pokemon.weight}}</p>
+        <p>Types: <span :key="type" v-for="type in pokemon.types">{{type}} </span></p>
+        <p>Abilities: <span :key="type" v-for="type in pokemon.abilities">{{type}} </span></p>
+
   </article>
 </template>
 
