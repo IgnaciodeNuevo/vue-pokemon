@@ -7,6 +7,7 @@
                     All
         </button>
         <button class="btn"
+                type="button"
                 :key="type"
                 v-for="type in pokemonTypes"
                 v-on:click="filterByTypes(pokemons, type)">
@@ -14,7 +15,9 @@
         </button>
         <section class="pokemons" v-if="pokemons">
             <article class="pokemon" :key="pokemon.id" v-for="pokemon in filteredPokemons">
-                <pokemon-card :pokemon="pokemon"></pokemon-card>
+                <router-link :to="{name: 'pokemon',params:{id: pokemon.id}}">
+                    <pokemon-card :pokemon="pokemon"></pokemon-card>
+                </router-link>
             </article>
         </section>
   </div>
@@ -71,6 +74,10 @@ export default {
 <style>
 html {
     font-family: 'Fredoka One', cursive;
+}
+
+a {
+    text-decoration: none;
 }
 
 .title {
