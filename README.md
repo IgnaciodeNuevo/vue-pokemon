@@ -5,6 +5,14 @@
 npm install
 ```
 
+Open a new terminal and run
+
+```
+npm install json-server -g
+cd /src/data
+json-server pokemons.json
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
