@@ -10,12 +10,11 @@
 </head>
 <body>
     <div id="app">
-        <h1 class="title">{{text}}</h1>
-        <div class="buttons">
-            <button class="btn" v-for="type in pokemonTypes">{{type}}</button>
-        </div>
+        <h1 class="title">{{appTitle}}</h1>
+        <button class="btn" type="button" v-on:click="showAllPokemons()">All</button>
+        <button class="btn" v-for="type in pokemonTypes" v-on:click="filterByTypes(pokemons, type)">{{type}}</button>
         <section class="pokemons" v-if="pokemons">
-            <article class="pokemon" v-for="pokemon in pokemons">
+            <article class="pokemon" v-for="pokemon in filteredPokemons">
                 <h2 class="pokemon-name">{{pokemon.name}}</h2>
                 <img class="pokemon-img" :src="getImage(pokemon.image)" :alt="pokemon.name">
             </article>

@@ -2,8 +2,9 @@ const app = new Vue({
     el: '#app',
     data() {
         return {
-            text: 'Vue Pokedex',
+            appTitle: 'Vue Pokedex',
             pokemons: [],
+            filteredPokemons: [],
             pokemonTypes: []
         }
     },
@@ -11,7 +12,8 @@ const app = new Vue({
         fetch('http://localhost:3000/pokemons')
             .then(response => response.json())
             .then(pokemons => {
-                this.pokemons = pokemons
+                this.pokemons = pokemons;
+                this.filteredPokemons = pokemons;
                 this.pokemonTypes = this.getPokemonUnicTypes(pokemons);
                     console.log(this.pokemons);
                     console.log(this.getPokemonUnicTypes(pokemons));
@@ -31,8 +33,11 @@ const app = new Vue({
             const unicTypes = Array.from(new Set(types));
             return unicTypes;
         },
-        filterTypes(pokemons, types) {
-
+        filterByTypes(pokemons, types) {
+            this.filteredPokemons = pokemons.filter(pokemon => pokemon.types.includes(types));
+        },
+        showAllPokemons() {
+            this.filteredPokemons = this.pokemons;
         }
     }
 })
