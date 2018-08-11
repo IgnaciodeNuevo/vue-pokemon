@@ -14,5 +14,10 @@ const app = new Vue({
                     console.log(this.pokemons);
                 }
             )
+    },
+    methods: {
+        getImage(imgSrc) {
+            return `assets/${imgSrc}`
+        }
     }
 })
