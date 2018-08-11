@@ -11,16 +11,25 @@
 <body>
     <div id="app">
         <h1 class="title">{{appTitle}}</h1>
+        <form action="">
+            <label class="form-label" for="search">Search a Pokemon</label>
+            <input class="form-input" id="search" type="text">
+        </form>
         <button class="btn" type="button" v-on:click="showAllPokemons()">All</button>
         <button class="btn" v-for="type in pokemonTypes" v-on:click="filterByTypes(pokemons, type)">{{type}}</button>
         <section class="pokemons" v-if="pokemons">
             <article class="pokemon" v-for="pokemon in filteredPokemons">
-                <h2 class="pokemon-name">{{pokemon.name}}</h2>
-                <img class="pokemon-img" :src="getImage(pokemon.image)" :alt="pokemon.name">
+                <pokemon-card :pokemon="pokemon"></pokemon-card>
             </article>
         </section>
     </div>
 </body>
+<script id="pokemonCard" type="text/x-template">
+    <div>
+        <h2 class="pokemon-name">{{pokemon.name}}</h2>
+        <img class="pokemon-img" :src="getImage(pokemon.image)" :alt="pokemon.name">
+    </div>
+</script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 <script src="/assets/js/main.js"></script>
 </html>

@@ -1,3 +1,18 @@
+const PokemonCard = {
+    props: {
+        pokemon: {
+            type: Object,
+            values: {}
+        }
+    },
+    template: '#pokemonCard',
+    methods: {
+        getImage(imgSrc) {
+            return `assets/${imgSrc}`
+        }
+    }
+}
+
 const app = new Vue({
     el: '#app',
     data() {
@@ -21,9 +36,6 @@ const app = new Vue({
             )
     },
     methods: {
-        getImage(imgSrc) {
-            return `assets/${imgSrc}`
-        },
         getPokemonUnicTypes(pokemons) {
             const types = pokemons
                     .map(pokemon => pokemon.types)
@@ -39,5 +51,8 @@ const app = new Vue({
         showAllPokemons() {
             this.filteredPokemons = this.pokemons;
         }
+    },
+    components: {
+        PokemonCard,
     }
 })
