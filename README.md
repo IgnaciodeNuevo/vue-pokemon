@@ -13,3 +13,7 @@ Run from /data
 Install live server
 
 `npm i live-server -g`
+
+Run this command from the root of your project
+
+`live-server`
