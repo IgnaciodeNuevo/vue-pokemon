@@ -1,19 +1,21 @@
-# Pokemons exercise
+# vue-pokedex
 
-## Dependencies
+## Project setup
+```
+npm install
+```
 
-Install json server globally
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-`npm i json-server -g`
+### Compiles and minifies for production
+```
+npm run build
+```
 
-Run from /data
-
-`json-server pokemons.json`
-
-Install live server
-
-`npm i live-server -g`
-
-Run this command from the root of your project
-
-`live-server`
+### Lints and fixes files
+```
+npm run lint
+```
