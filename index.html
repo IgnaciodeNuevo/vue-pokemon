@@ -11,9 +11,9 @@
     <div id="app">
         <h1 class="title">{{text}}</h1>
         <section class="pokemons" v-if="pokemons">
-            <article v-for="pokemon in pokemons">
-                <h2>{{pokemon.name}}</h2>
-                <img :src="getImage(pokemon.image)" :alt="pokemon.name">
+            <article class="pokemon" v-for="pokemon in pokemons">
+                <h2 class="pokemon-name">{{pokemon.name}}</h2>
+                <img class="pokemon-img" :src="getImage(pokemon.image)" :alt="pokemon.name">
             </article>
         </section>
     </div>
